@@ -1,0 +1,284 @@
+/* Administrative Layout Token Rules */
+:root {
+    --bg-admin-main: #FAFAFA;
+    --bg-admin-surface: #FFFFFF;
+    --color-admin-purple: #4A154B;
+    --color-admin-gold: #D4AF37;
+    --color-admin-dark: #1E293B;
+    --color-admin-muted: #64748B;
+    --color-admin-border: #E2E8F0;
+    --color-admin-success: #10B981;
+    --color-admin-error: #EF4444;
+    --radius-admin: 10px;
+    --shadow-admin: 0 4px 12px rgba(0, 0, 0, 0.03);
+    --font-admin: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-admin-main);
+    color: var(--color-admin-dark);
+    font-family: var(--font-admin);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Master Structure Framework */
+.admin-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.admin-header {
+    height: 70px;
+    background-color: var(--bg-admin-surface);
+    border-bottom: 1px solid var(--color-admin-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-logo {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--color-admin-purple), var(--color-admin-gold));
+    border-radius: 6px;
+}
+
+.header-brand h2 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.badge-system {
+    font-size: 11px;
+    font-weight: 600;
+    background-color: rgba(74, 21, 75, 0.05);
+    color: var(--color-admin-purple);
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.btn-text {
+    color: var(--color-admin-purple);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.btn-text:hover {
+    text-decoration: underline;
+}
+
+/* Operational Workspace Framework Grid */
+.admin-workspace {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 24px;
+    padding: 32px;
+    flex-grow: 1;
+}
+
+.ops-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.queue-column {
+    min-width: 0;
+}
+
+.admin-card {
+    background-color: var(--bg-admin-surface);
+    border: 1px solid var(--color-admin-border);
+    border-radius: var(--radius-admin);
+    padding: 24px;
+    box-shadow: var(--shadow-admin);
+}
+
+.full-height {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header-split {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.admin-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--color-admin-dark);
+}
+
+.card-header-split h3 {
+    margin-bottom: 0;
+}
+
+/* Control Elements Form Configurations */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--color-admin-dark);
+}
+
+.admin-input {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: var(--bg-admin-main);
+    border: 1px solid var(--color-admin-border);
+    border-radius: 6px;
+    font-size: 13px;
+    outline: none;
+}
+
+.admin-input:focus {
+    border-color: var(--color-admin-purple);
+    background-color: var(--bg-admin-surface);
+}
+
+/* Action Controls Systems buttons */
+.btn-admin-primary {
+    background-color: var(--color-admin-purple);
+    color: var(--bg-admin-surface);
+    border: none;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-admin-primary:hover {
+    background-color: #350f36;
+}
+
+.btn-admin-secondary {
+    background-color: var(--bg-admin-surface);
+    border: 1px solid var(--color-admin-border);
+    color: var(--color-admin-dark);
+    padding: 6px 12px;
+    font-weight: 600;
+    font-size: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-admin-secondary:hover {
+    background-color: var(--bg-admin-main);
+}
+
+.btn-action-approve {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--color-admin-success);
+    border: none;
+    padding: 4px 8px;
+    font-weight: 600;
+    font-size: 11px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.btn-action-reject {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--color-admin-error);
+    border: none;
+    padding: 4px 8px;
+    font-weight: 600;
+    font-size: 11px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Interactive Data Tables Panels Grid */
+.admin-table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    flex-grow: 1;
+}
+
+.admin-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    text-align: left;
+}
+
+.admin-data-table th {
+    color: var(--color-admin-muted);
+    font-weight: 600;
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--color-admin-border);
+}
+
+.admin-data-table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--color-admin-border);
+}
+
+.actions-cell {
+    text-align: right;
+}
+
+/* Toast Alert Elements */
+#admin-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    color: var(--bg-admin-surface);
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.admin-toast-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.admin-toast-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-success { background-color: var(--color-admin-success); }
+.toast-info { background-color: var(--color-admin-purple); }
+
+/* Responsive Settings */
+@media (max-width: 992px) {
+    .admin-workspace {
+        grid-template-columns: 1fr;
+    }
+}
