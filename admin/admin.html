@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Exchange - Administrative Console</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-shell">
+        <!-- Top Management Navigation Header -->
+        <header class="admin-header">
+            <div class="header-brand">
+                <div class="admin-logo"></div>
+                <h2>Control Panel</h2>
+                <span class="badge-system">Admin Application</span>
+            </div>
+            <div class="header-actions">
+                <a href="../index.html" class="btn-text">Return to User App</a>
+            </div>
+        </header>
+
+        <!-- Main Grid Workspace Frame -->
+        <main class="admin-workspace">
+            <!-- Left Side Operations Row -->
+            <div class="ops-column">
+                <!-- System Configuration Board -->
+                <section class="admin-card">
+                    <h3>Exchange Rate Management</h3>
+                    <form id="admin-rate-form" novalidate>
+                        <div class="form-group">
+                            <label for="rate-multiplier">Operational Rate Matrix (1 GC = ? PC)</label>
+                            <input type="number" id="rate-multiplier" class="admin-input" step="0.1" min="0.1" required>
+                        </div>
+                        <button type="submit" class="btn-admin-primary">Update Global Index</button>
+                    </form>
+                </section>
+
+                <!-- Asset Matrix Form Management -->
+                <section class="admin-card">
+                    <h3>New Coin Publishing</h3>
+                    <form id="admin-coin-form" novalidate>
+                        <div class="form-group">
+                            <label for="new-coin-name">Coin Nomenclature</label>
+                            <input type="text" id="new-coin-name" class="admin-input" placeholder="e.g., Platinum Coin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-coin-ticker">Ticker Key</label>
+                            <input type="text" id="new-coin-ticker" class="admin-input" placeholder="e.g., PLC" required>
+                        </div>
+                        <button type="submit" class="btn-admin-primary">Publish Asset Configuration</button>
+                    </form>
+                </section>
+            </div>
+
+            <!-- Right Side Queue Execution Lists -->
+            <div class="queue-column">
+                <!-- Dynamic Queue Pipeline Registry Card -->
+                <section class="admin-card full-height">
+                    <div class="card-header-split">
+                        <h3>Pending Conversion Requests</h3>
+                        <button id="refresh-queue-btn" class="btn-admin-secondary">Sync Grid</button>
+                    </div>
+                    <div class="admin-table-responsive">
+                        <table class="admin-data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Operation</th>
+                                    <th>Quantity</th>
+                                    <th>Timestamp</th>
+                                    <th class="actions-cell">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-queue-tbody">
+                                <!-- Populated dynamically by admin.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Administrative Toast Feedback Component -->
+    <div id="admin-toast" class="admin-toast-hidden"></div>
+
+    <!-- Storage and Logic Modules Links -->
+    <script src="../js/data.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
